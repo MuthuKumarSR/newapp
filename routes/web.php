@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'HomeController@profile')->name('profile');
+
+Route::get('/post', 'HomeController@post')->name('post');
+
+Route::post('/post', 'HomeController@upload')->name('upload');
+
+Route::get('/delete/{id}','HomeController@delete')->name('delete');
